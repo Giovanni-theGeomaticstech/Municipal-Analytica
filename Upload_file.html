@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
+  <title>Load in Shapefile</title>
+  <link rel="stylesheet" href="Css/index_2.css" />
+  <link rel="stylesheet" href="Css/Municipal_App.css" />
+
+  <!--<link rel="stylesheet" href="https://js.arcgis.com/3.30/dijit/themes/claro/claro.css">-->
+  <link rel="stylesheet" href="https://js.arcgis.com/3.30/esri/css/esri.css">
+  <script src="https://js.arcgis.com/3.30/"></script>
+
+  <script src="Javascript/Municipal(3).js"></script>
+
+</head>
+
+<body>
+  <div id="main_page">
+    <div class="center_item center_panel">
+      <h2 class="style_h2">Municipal Analytica</h2>
+      <p class="text_p">Giving the municipals the power to analyze</p>
+      <!-- center the item in the middle of the page-->
+      <div class="center_cols_2">
+        <!--Possibly add in the option of deleting features-->
+        <!--data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region:'center'"-->
+        <div id="mapCanvas"></div>
+        <form enctype="multipart/form-data" method="post" id="file_upload">
+          <div class="field">
+            <label class="file-upload button">
+              <span><strong>Click to Add Shapefile</strong></span>
+              <input type="file" name="file" id="inFile" />
+            </label>
+
+            <div id = "simulator_button"><a id="ref" href="Intersection_app.html"><span><strong>Click to go to
+                    Simulation</strong></span></a></div>
+          </div>
+        </form>
+        <div id="upload-status" class="loader visibility_hidden"></div>
+
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

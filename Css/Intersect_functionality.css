@@ -1,0 +1,336 @@
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #F8F8F8;
+}
+
+#outer_area {}
+
+.center_item {
+    /*Subject to change when the intersection functionality is added
+    /*center stuff vertically on the page */
+    border-top: 8px solid tomato;
+    background-color: white;
+    padding: 20px;
+    width: 50%;
+    height: 70%;
+    /*border: 1px solid black;*/
+    display: block !important;
+
+    /*center stuff vertically on the page */
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12),
+        0 1px 4px rgba(0, 0, 0, 0.24);
+}
+
+.center_item_enlarge {
+
+    /*For the second part of the simulation*/
+    width: 70% !important;
+    height: 80% !important;
+}
+
+
+/*For the Map element*/
+#viewDiv {
+    width: 80%;
+    height: 60%;
+    background-color: black;
+    display: block;
+    margin: auto;
+}
+
+.viewDiv_change {
+    margin: 0px !important;
+    width: 70% !important;
+    height: 60% !important;
+}
+
+/*******************************************************************/
+/*For the Check boxes styling*/
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    color: black;
+    font-size: 15px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 15px;
+    background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input~.checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked~.checkmark {
+    background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/*******************************************************************/
+
+
+
+#Simulate {
+    margin: auto;
+}
+
+.button {
+    background-color: black;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    width: 200px;
+    font-size: 14px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12),
+        0 1px 4px rgba(0, 0, 0, 0.24);
+    font-family: Verdana;
+    transition: background-color 2s;
+    position: relative;
+    top: 8em;
+}
+
+.button:hover {
+    background-color: white;
+    color: black
+}
+
+
+/*Adjusting the map features so that it works properly with the new elements*/
+.mapAdjust {}
+
+/*Hiding the map attributes*/
+/*Such as ESRI thing temporarily*/
+.esri-view-user-storage,
+.esri-ui,
+.esri-overlay-surface {
+    /*just to hide the attribution*/
+    visibility: hidden;
+}
+
+
+
+
+
+
+h3 {
+    margin-top: 3% !important;
+    text-align: center;
+}
+
+
+.locator {
+    text-align: center;
+}
+
+/* Change the color of links on hover */
+
+button:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/*For class Created*/
+.header {
+    position: absolute;
+
+}
+
+.outer_cDiv {
+    margin: 0px;
+    background-color: transparent;
+    overflow-y: scroll;
+    height: 40%;
+    width: 70%;
+    text-align: center;
+    position: relative;
+    top: 0.2em;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12),
+        0 1px 4px rgba(0, 0, 0, 0.24);
+}
+
+.cDiv {
+    padding-top: 50px;
+    margin: auto;
+    height: 120px;
+    width: 25%;
+    display: inline-block;
+    margin-top: 0.5%;
+    border-style: ridge;
+    background-image: url("Pics/intersection_1.jpg");
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    background-size: 100%;
+    background-position: center;
+}
+
+.cDivText {
+    text-align: center;
+    color: black;
+    font-size: 1em;
+}
+
+/*Divs created for the features available*/
+
+.fDiv {
+    display: block;
+}
+
+.fDivText {
+    margin-top: 0.5%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: -4%;
+    transform: translateY(-50%);
+}
+
+
+
+
+/*Making the Gauge Chart*/
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+:root {
+    --rotation: 0deg;
+}
+
+body {
+    height: 100vh;
+}
+
+.containergauge {
+    font-family: Arial;
+    height: 8rem;
+    left: 86%;
+    overflow: hidden;
+    position: relative;
+    top: -87.3%;
+    transform: translate(-50%, -50%);
+    width: 16rem;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12),
+        0 1px 4px rgba(0, 0, 0, 0.24);
+}
+
+.loader {
+    background: transparent;
+    border: 30px solid #d7eca6;
+    border-radius: 50%;
+    height: 16rem;
+    transition: transform 0.2s ease;
+    transform: rotate(var(--rotation));
+    position: relative;
+    width: 16rem;
+}
+
+.loader::before {
+    content: '';
+    border: 30px solid #8cc800;
+    border-left-color: transparent;
+    border-radius: 50%;
+    border-top-color: transparent;
+    height: 16rem;
+    left: -30px;
+    position: absolute;
+    top: -30px;
+    transform: rotate(45deg);
+    width: 16rem;
+    z-index: 2;
+}
+
+.loader__title {
+    color: #8cc800;
+    font-size: 1.5rem;
+    left: 53%;
+    position: absolute;
+    transform: translateX(-50%);
+    top: 35%;
+}
+
+
+.car_panel {
+    height: 40%;
+    width: 16rem;
+    left: 72.9%;
+    top: -80%;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12),
+        0 1px 4px rgba(0, 0, 0, 0.24);
+}
+
+.car_h2 {
+    margin: auto;
+    position: relative;
+    top: 10%;
+    color: red;
+}
+
+.car_h1 {
+    color: black;
+    margin: auto;
+    position: relative;
+    top: 3%;
+}

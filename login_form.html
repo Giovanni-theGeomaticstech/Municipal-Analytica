@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" type="text/css" href="Css/login_page.css">
+    </head>
+
+    <body>
+        <div class="container" id="container">
+    <div class="form-container sign-up-container">
+        <form action="#">
+            <h1>Municipal User</h1>
+            <div class="social-container">
+                <a href="#" class="fb btn"><i class="fab fa-facebook-f"></i> F</a>
+                <a href="#" class="google btn"><i class="fab fa-google-plus-g"></i> G+</a>
+                <a href="#" class="twitter"><i class="fab fa-linkedin-in"></i> T</a>
+            </div>
+            <span>or use your account</span>
+            <input id = "M_user" type="text" placeholder="Username" />
+            <input id = "M_pass" type="password" placeholder="Password" />
+            <a href="#">Forgot your password?</a>
+            <button id = "login_muni" onclick = "municipal()">Login</button>
+        </form>
+    </div>
+    <div class="form-container sign-in-container">
+        <form action="#">
+            <h1>Single User</h1>
+            <div class="social-container">
+                <a href="#" class="fb"><i class="fab fa-facebook-f"></i> F</a>
+                <a href="#" class="google"><i class="fab fa-google-plus-g"></i> G+</a>
+                <a href="#" class="twitter"><i class="fab fa-linkedin-in"></i> T</a>
+            </div>
+            <span>or use your account</span>
+            <input id = "S_user" type="text" placeholder="Username" />
+            <input id = "S_pass" type="password" placeholder="Password" />
+            <a href="#">Forgot your password?</a>
+            <button id = "login_single" onclick = "single_user()">Login</button>
+        </form>
+    </div>
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-panel overlay-left">
+                <h1>Single User?</h1>
+                <p>Use the Single User Login Portal</p>
+                <button class="ghost" id="signIn">Redirect</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+                <h1>Municipal User?</h1>
+                <p>Use the Municipal User Login Portal</p>
+                <button class="ghost" id="signUp">Redirect</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+	const signUpButton = document.getElementById('signUp');
+	const signInButton = document.getElementById('signIn');
+	const container = document.getElementById('container');
+
+	signUpButton.addEventListener('click', () => {
+	  container.classList.add("right-panel-active");
+	});
+
+	signInButton.addEventListener('click', () => {
+	  container.classList.remove("right-panel-active");
+	});
+	
+	function municipal(){
+		var user_list = ['Brent','Giovanni','Emily','Lawrence'];
+		var user_name = document.getElementById("M_user").value
+		var password = document.getElementById("M_pass").value
+		console.log(user_name,password)
+		if (user_list.includes(user_name)){
+			alert("Welcome " + user_name + "!")
+			window.open("Municipal.html")
+		}
+		else{
+			alert("You are not registered to use the application! ")
+			alert("Please purchase a license!")
+		}
+	}
+	
+	function single_user(){
+		var user_name = document.getElementById("S_user").value
+		var password = document.getElementById("S_pass").value
+		window.open("Base_User.html")
+
+	}
+	
+	
+    </script>
+</body>
+</html>
